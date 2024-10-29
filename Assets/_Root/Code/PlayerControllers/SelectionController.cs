@@ -3,11 +3,10 @@ using UnityEngine;
 public sealed class SelectionController : MonoBehaviour
 {
     private float _raycastDistance = 10f;
-    public PickUpView CurrentPickUpView { get; private set; }
-
     private float _timeDelay = 0.1f;
     private float _elapsed;
     public bool CanSelect = true;
+    public PickUpView CurrentPickUpView { get; private set; }
 
     private void Update()
     {
@@ -55,15 +54,6 @@ public sealed class SelectionController : MonoBehaviour
                 }
             }
             _elapsed = 0;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (CurrentPickUpView)
-        {
-            CurrentPickUpView.Deselect();
-            CurrentPickUpView = null;
         }
     }
 }

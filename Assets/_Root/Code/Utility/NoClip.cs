@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public sealed class NoClip : MonoBehaviour
@@ -8,6 +7,7 @@ public sealed class NoClip : MonoBehaviour
     [SerializeField] private LayerMask _clippingLayerMask;
     [SerializeField] private AnimationCurve _offsetCurve;
     private Vector3 _originalLocalPosition;
+    
     private void Awake() => _originalLocalPosition = transform.localPosition;
 
     private void FixedUpdate()

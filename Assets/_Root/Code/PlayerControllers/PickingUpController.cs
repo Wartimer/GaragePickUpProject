@@ -7,11 +7,8 @@ public sealed class PickingUpController : MonoBehaviour
     private SelectionController _selectionController;
     private PickUpView _currentCariedPickUp;
 
-    private void Awake()
-    {
-        _selectionController = GetComponent<SelectionController>();
-    }
-
+    private void Awake() => _selectionController = GetComponent<SelectionController>();
+    
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -41,7 +38,6 @@ public sealed class PickingUpController : MonoBehaviour
                 }
             }
         }
-
     }
 
 }
